@@ -1,0 +1,327 @@
+{
+  "site": {
+    "name": "Juice Luxury Rentals",
+    "phone": "13019807994",
+    "phoneDisplay": "(301) 980-7994",
+    "instagram": "https://www.instagram.com/juiceluxuryrentals"
+  },
+  "villas": [
+    {
+      "slug": "nova",
+      "name": "Villa Nova",
+      "loc": "Brickell, Miami",
+      "bedrooms": "7",
+      "baths": "6.5",
+      "sleeps": "14",
+      "tagline": "Seven bedrooms in the middle of Brickell.",
+      "description": "The big-group house. Seven bedrooms and six and a half baths, sleeping fourteen, minutes on foot from Brickell's restaurants and nightlife. Built for the trip where everyone comes.",
+      "amenities": [
+        "Private pool",
+        "7 bedrooms",
+        "Sleeps 14",
+        "Walk to Brickell",
+        "High-speed WiFi",
+        "Smart TVs"
+      ],
+      "sleeping": [],
+      "max_images": 60
+    },
+    {
+      "slug": "eden",
+      "name": "Villa Eden",
+      "loc": "Buena Vista · Design District",
+      "bedrooms": "6",
+      "baths": "4.5",
+      "sleeps": "12",
+      "tagline": "A sun-drenched, Eden-themed haven on the edge of the Design District.",
+      "description": "High ceilings and modern finishes in a bright, open space built for relaxation and connection. Buena Vista is a historic Miami neighborhood next to the Wynwood Arts District and the Design District — charming early-1900s homes, tree-lined streets, and the city's best galleries, boutiques and restaurants a short stroll away.",
+      "amenities": [
+        "Private heated pool",
+        "Billiards",
+        "Ping-pong",
+        "Outdoor grill & dining",
+        "Outdoor lounge",
+        "Smart TVs",
+        "King & queen beds",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Bedroom 1 — King, en-suite bath",
+        "Bedroom 2 — Queen, en-suite bath",
+        "Bedroom 3 — Queen, en-suite bath",
+        "Bedroom 4 — Queen, en-suite bath",
+        "Bedroom 5 — Queen",
+        "Bedroom 6 — Queen"
+      ],
+      "max_images": 60
+    },
+    {
+      "slug": "santorini",
+      "name": "Santorini",
+      "loc": "Pine Tree Drive · Miami Beach",
+      "bedrooms": "8",
+      "baths": "7",
+      "sleeps": "26",
+      "tagline": "Mediterranean waterfront estate with a private dock and the skyline across the bay.",
+      "description": "Paradise on Pine Tree Drive — the waterfront gem of Miami Beach. Eight bedrooms across a main house and a separate four-bedroom guest house, sleeping 26, with a large bay-front pool, waterfront yard, hammock, basketball net in the pool, ping-pong, outdoor kitchen and multiple lounging terraces looking at the skyline. A grand piano under coffered ceilings inside; a private dock for the yacht day outside. Minutes from the beaches, dining and nightlife.",
+      "amenities": [
+        "Waterfront with private dock",
+        "Bay-front pool",
+        "Skyline views",
+        "Basketball pool net",
+        "Ping-pong",
+        "Hammock",
+        "Outdoor kitchen & grill",
+        "Multiple outdoor lounges",
+        "Grand piano",
+        "Separate 4-bedroom guest house",
+        "Spacious parking",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Main house — Master: 2 Queens, en-suite",
+        "Main house — Bedroom 2: 2 Queens, en-suite",
+        "Main house — Bedroom 3: 2 Queens, en-suite",
+        "Main house — Bedroom 4: 2 Queens",
+        "Guest house — Bedroom 1: Full",
+        "Guest house — Bedroom 2: 2 Twins (bunk)",
+        "Guest house — Bedroom 3: 2 Twins",
+        "Guest house — Bedroom 4: 2 Fulls (bunk)"
+      ],
+      "max_images": 60,
+      "hero": 1
+    },
+    {
+      "slug": "athena",
+      "name": "Athena",
+      "loc": "Buena Vista · Design District",
+      "bedrooms": "6",
+      "baths": "4.5",
+      "sleeps": "14",
+      "tagline": "Dark-modern estate: marble, black lacquer, and a night-lit pool.",
+      "description": "Moody and sharp — a black-and-white palette, book-matched marble feature walls, a full billiards lounge and a black kitchen bar. Every bedroom is hotel-grade with its own spa bath and rain shower; the master has a walk-in closet the size of a bedroom. Out back, a lit pool set in a lawn under the trees.",
+      "amenities": [
+        "Private heated pool",
+        "Billiards lounge",
+        "Ping-pong",
+        "Outdoor grill & dining",
+        "Outdoor lounge",
+        "Spa bathrooms with rain showers",
+        "Walk-in closets",
+        "Smart TVs",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Upstairs — Bedroom 1: King, en-suite",
+        "Bedroom 2: King",
+        "Bedroom 3: King",
+        "Downstairs — Bedroom 4: Queen",
+        "Bedroom 5: 2 Queens, en-suite",
+        "Bedroom 6: Queen"
+      ],
+      "max_images": 60
+    },
+    {
+      "slug": "hibiscus",
+      "name": "Villa Babette · Hibiscus Island",
+      "loc": "Hibiscus Island, Miami Beach",
+      "bedrooms": "4",
+      "baths": "4",
+      "sleeps": "8",
+      "sqft": "4,000",
+      "tagline": "Waterfront privacy on Hibiscus Island, five minutes from the beach.",
+      "description": "A one-of-a-kind Miami Beach villa in an incredibly private corner of Hibiscus Island. Lush, meandering gardens of palms and tropical plants, a pristine heated 50-foot pool, a Spanish-inspired fountain, private dock and terrace, and a fully detached poolside guest house. Three roomy en-suite bedrooms in the main house plus the guest suite; a sunroom with panoramic windows for slow mornings.",
+      "amenities": [
+        "Waterfront with private dock",
+        "50-ft heated pool",
+        "Outdoor jacuzzi",
+        "Detached guest house",
+        "Barbecue",
+        "2-car garage + 4 outdoor spots",
+        "Wine storage",
+        "Alarm system",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Master suite — King, en-suite bath",
+        "Bedroom 2 — Queen, en-suite bath",
+        "Bedroom 3 — Queen, en-suite bath",
+        "Guest house — Queen, en-suite bath"
+      ],
+      "notes": "5 min to the beach · 20 min to the airport · 10 min to golf",
+      "max_images": 50
+    },
+    {
+      "slug": "playacastillo",
+      "name": "Playa Castillo",
+      "loc": "Venetian Islands, Miami Beach",
+      "bedrooms": "6",
+      "baths": "3.5",
+      "sleeps": "",
+      "tagline": "Six bedrooms on the Venetian Islands.",
+      "description": "Island living between downtown and South Beach — six bedrooms, waterfront setting, and the Venetian Causeway at your door. Professionally photographed, drone views included. Full specs and availability on request.",
+      "amenities": [
+        "Venetian Islands",
+        "6 bedrooms",
+        "Waterfront",
+        "Private pool",
+        "Minutes to South Beach"
+      ],
+      "sleeping": [],
+      "source_dirs": [
+        "playacastillo/Low res (For web use including MLS)",
+        "playacastillo/Drone Low res"
+      ],
+      "max_images": 60
+    },
+    {
+      "slug": "ikon",
+      "name": "Ikon",
+      "loc": "The Roads · Brickell",
+      "bedrooms": "4",
+      "baths": "4",
+      "sleeps": "10",
+      "tagline": "Rooftop pool over the Brickell skyline.",
+      "description": "A modern white cube minutes from Brickell with the money shot up top: a rooftop pool and lounge deck looking at the towers. Downstairs is gallery-white — double-height living, a glass-railed staircase, an open chef's kitchen with island seating, ping-pong, and a two-car garage. Bedrooms in tufted headboards and marble baths.",
+      "amenities": [
+        "Rooftop pool",
+        "Rooftop lounge & grill",
+        "Skyline views",
+        "Ping-pong",
+        "Chef's kitchen",
+        "Walk-in closet",
+        "2-car garage",
+        "Smart TVs",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Master — King",
+        "Bedroom 2 — Queen",
+        "Bedroom 3 — 2 Queens",
+        "Bedroom 4 — Queen"
+      ],
+      "max_images": 60,
+      "hero": 5,
+      "sqft": "3,500"
+    },
+    {
+      "slug": "posh",
+      "name": "Villa Posh",
+      "loc": "The Roads · Brickell",
+      "bedrooms": "4",
+      "baths": "4",
+      "sleeps": "10",
+      "sqft": "3,500",
+      "tagline": "Rooftop pool with the Brickell skyline.",
+      "description": "A 3,500-square-foot oasis in The Roads — tree-lined residential calm with Brickell's financial district, Wynwood Walls and Coconut Grove all a short drive away. The exclusive rooftop pool, rooftop grill and lounge are the reason people book it twice.",
+      "amenities": [
+        "Private rooftop pool",
+        "Rooftop grill",
+        "Indoor & rooftop dining",
+        "Ping-pong",
+        "Private work space",
+        "Smart TVs",
+        "King & queen beds",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Master — King",
+        "Bedroom 2 — Queen",
+        "Bedroom 3 — 2 Queens",
+        "Bedroom 4 — Queen"
+      ],
+      "max_images": 60
+    },
+    {
+      "slug": "carriage",
+      "name": "Carriage",
+      "loc": "Little Haiti · Design District",
+      "bedrooms": "5",
+      "baths": "3.5",
+      "sleeps": "12",
+      "tagline": "Black modern architecture with a games room and a pool under the oaks.",
+      "description": "A Victorian-inspired luxury home in Buena Vista with high ceilings, bold murals and an open, airy layout — black modern architecture outside, royal-portrait art and a games room inside (billiards, shuffleboard, wine fridge). Cook in the gourmet kitchen, lounge under the covered wood-ceiling patio with its outdoor kitchen, or soak by the heated pool on the lawn under the oaks. The charming carriage in the backyard is the photo everyone posts. Five bedrooms including a bunk room, sleeping twelve.",
+      "amenities": [
+        "Private lit pool",
+        "Billiards",
+        "Shuffleboard",
+        "Outdoor kitchen & grill",
+        "Covered patio",
+        "Wine fridge",
+        "Bunk rooms",
+        "Laundry",
+        "Smart TVs",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Bedroom 1 — King, en-suite",
+        "Bedroom 2 — Queen, en-suite",
+        "Bedroom 3 — Queen, en-suite",
+        "Bedroom 4 — Bunk beds",
+        "Bedroom 5 — Queen"
+      ],
+      "max_images": 60
+    },
+    {
+      "slug": "littlehaiti",
+      "name": "Little Haiti Villa",
+      "loc": "Little Haiti · Buena Vista",
+      "bedrooms": "4",
+      "baths": "4",
+      "sleeps": "12",
+      "tagline": "Newly built, 25-foot glass façade, absolute privacy.",
+      "description": "A striking, newly built single-family home — sleek luxury and total privacy behind a breathtaking 25-foot double-height glass storefront façade. Inside, a sun-drenched, open-concept architectural haven that feels grand and welcoming at once. Set in a quiet canopy-lined enclave moments from the Design District, Upper Buena Vista's artisan shops and Wynwood's galleries.",
+      "amenities": [
+        "Private pool",
+        "Billiards",
+        "Grill",
+        "Outdoor lounge",
+        "Smart TVs",
+        "King & queen beds",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Master — King",
+        "Bedroom 2 — 2 Queens",
+        "Bedroom 3 — 2 Queens",
+        "Bedroom 4 — Full"
+      ],
+      "max_images": 60
+    },
+    {
+      "slug": "bond",
+      "name": "Bond",
+      "loc": "Spring Garden · Miami River",
+      "bedrooms": "8",
+      "baths": "6",
+      "sleeps": "20",
+      "tagline": "All-white, high-vaulted, built for the party.",
+      "description": "A tropical resort hidden in the heart of Miami, minutes from the beach and the airport — a fusion of two large houses on the historic Miami River near Kiki on the River. Eight bedrooms sleeping twenty, plus a movie theater, poker room, gym, billiards and ping-pong, all around a pool and jacuzzi framed by palms. The all-white vaulted great room is the party; the guest house is the escape.",
+      "amenities": [
+        "Pool with jacuzzi",
+        "Poker room",
+        "Billiards",
+        "Ping-pong",
+        "Movie theater",
+        "Private gym",
+        "PlayStation",
+        "Outdoor grill, dining & lounge",
+        "Separate guest house",
+        "Smart TVs",
+        "High-speed WiFi"
+      ],
+      "sleeping": [
+        "Main — Master: King, en-suite",
+        "Bedroom 2: King",
+        "Bedroom 3: King",
+        "Bedroom 4: King",
+        "Bedroom 5: Queen",
+        "Bedroom 6: Queen",
+        "Bedroom 7: 2 Queens",
+        "Guest house — Bedroom 8: 2 Queens, en-suite",
+        "Movie theater — King sofa bed"
+      ],
+      "max_images": 60
+    }
+  ]
+}

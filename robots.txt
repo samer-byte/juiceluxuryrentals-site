@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /assets/*/_raw/
+Sitemap: https://juiceluxuryrentals.com/sitemap.xml
