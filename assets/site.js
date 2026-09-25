@@ -1,6 +1,7 @@
 /* Juice Luxury Rentals — shared behaviors v4. Zero dependencies. Every effect degrades to static content. */
 (function(){
   const d=document, html=d.documentElement; html.classList.add('js');
+  const SELF=(d.currentScript&&d.currentScript.src)||'';
   const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const CONFIG=window.JLR_CONFIG||{phone:"13019807994",phoneDisplay:"(301) 980-7994",instagram:"https://www.instagram.com/juiceluxuryrentals"};
   const sms=body=>`sms:+${CONFIG.phone}?&body=${encodeURIComponent(body)}`;
@@ -35,6 +36,7 @@
   addEventListener('hashchange',()=>{ if(/^#tab-/.test(location.hash)) gotoTab(location.hash.slice(1),true); });
   /* rails */
   d.querySelectorAll('.rail-wrap').forEach(w=>{ const r=w.querySelector('.rail'), cnt=w.querySelector('.rail-count'); const step=()=>{const card=r.firstElementChild; return (card?card.getBoundingClientRect().width:320)+18}; w.querySelectorAll('[data-dir]').forEach(b=>b.addEventListener('click',()=>{ r.scrollBy({left:step()*parseInt(b.dataset.dir),behavior:RM?'auto':'smooth'}); }));
+    const fits=()=>w.classList.toggle('rail-fits',r.scrollWidth<=r.clientWidth+2); fits(); if('ResizeObserver' in window) new ResizeObserver(fits).observe(r); else addEventListener('resize',fits,{passive:true});
     const upd=()=>{ if(!cnt) return; const n=r.children.length; const i=Math.min(n,Math.round(r.scrollLeft/step())+1); cnt.textContent=`${String(i).padStart(2,'0')} / ${String(n).padStart(2,'0')}`; }; r.addEventListener('scroll',upd,{passive:true}); upd(); });
   /* hide the sticky bar while the hero CTAs are on screen (no double primary) */
   const hc=d.querySelector('.hero-ctas'); if(hc){ new IntersectionObserver(es=>es.forEach(e=>d.body.classList.toggle('hero-ctas-visible',e.isIntersecting)),{threshold:.4}).observe(hc); }
@@ -43,11 +45,53 @@
   const fOut=finder&&finder.querySelector('pre'), fGo=finder&&finder.querySelector('[data-finder-go]');
   if(finder&&fOut&&fGo){ const state={city:'Miami',what:new Set(),group:'',dates:''}; const out=fOut, go=fGo;
     const render=()=>{ const what=[...state.what].join(', '); const lines=[`Hi! Building a weekend from your site.`,`City: ${state.city}`]; if(state.dates)lines.push(`Dates: ${state.dates}`); if(state.group)lines.push(`Group: ${state.group}`); if(what)lines.push(`Need: ${what}`); if(!state.dates||!state.group)lines.push(`${!state.dates?'My dates':''}${!state.dates&&!state.group?' + ':''}${!state.group?'group size':''}:`); const msg=lines.join('\n'); out.textContent=msg; go.href=sms(msg); };
-    finder.querySelectorAll('[data-city]').forEach(b=>b.addEventListener('click',()=>{finder.querySelectorAll('[data-city]').forEach(x=>x.setAttribute('aria-pressed',x===b));state.city=b.dataset.city;render()}));
-    finder.querySelectorAll('[data-what]').forEach(b=>b.addEventListener('click',()=>{const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);on?state.what.add(b.dataset.what):state.what.delete(b.dataset.what);render()}));
+    /* only offer what the inventory supports in the chosen city (villas + cars are Miami only) */
+    const note=finder.querySelector('[data-city-note]');
+    const applyCity=()=>{ const key=/DC/.test(state.city)?'DC':'Miami'; finder.querySelectorAll('[data-what]').forEach(b=>{ const ok=!b.dataset.cities||b.dataset.cities.split(' ').includes(key); b.disabled=!ok; if(!ok){ b.setAttribute('aria-pressed','false'); state.what.delete(b.dataset.what); } }); if(note) note.hidden=key!=='DC'; };
+    finder.querySelectorAll('[data-city]').forEach(b=>b.addEventListener('click',()=>{finder.querySelectorAll('[data-city]').forEach(x=>x.setAttribute('aria-pressed',x===b));state.city=b.dataset.city;applyCity();render()}));
+    finder.querySelectorAll('[data-what]').forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);on?state.what.add(b.dataset.what):state.what.delete(b.dataset.what);render()}));
     finder.querySelectorAll('[data-group]').forEach(b=>b.addEventListener('click',()=>{finder.querySelectorAll('[data-group]').forEach(x=>x.setAttribute('aria-pressed',x===b));state.group=b.dataset.group;render()}));
     const dt=finder.querySelector('#fDates'); if(dt) dt.addEventListener('input',()=>{state.dates=dt.value.trim();render()});
-    render(); }
+    applyCity(); render(); }
+  /* desktop: an sms: link does nothing on most computers, so show the number, a copy button and a QR that opens
+     Messages on the phone with the same prewritten text. Phones/tablets keep the direct sms: link. */
+  const desk=matchMedia('(hover:hover) and (pointer:fine)');
+  let panel=null, qrReady=null;
+  const loadQR=()=>qrReady||(qrReady=new Promise((res,rej)=>{ if(window.JLRQR) return res(window.JLRQR); const s=d.createElement('script'); s.src=SELF?new URL('qr.js',SELF).href:'/assets/qr.js'; s.onload=()=>res(window.JLRQR); s.onerror=rej; d.head.appendChild(s); }));
+  const bodyOf=href=>{ const m=/[?&]body=([^&]*)/.exec(href); try{ return m?decodeURIComponent(m[1]):''; }catch(_){ return ''; } };
+  const copy=(text,btn)=>{ const done=()=>{ const t=btn.dataset.label||btn.textContent; btn.dataset.label=t; btn.textContent='Copied'; setTimeout(()=>btn.textContent=t,1800); };
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done,()=>{}); else { const ta=d.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0'; d.body.appendChild(ta); ta.select(); try{d.execCommand('copy');done()}catch(_){} ta.remove(); } };
+  const buildPanel=()=>{ const p=d.createElement('dialog'); p.className='txt-panel'; p.setAttribute('aria-labelledby','tp-h');
+    p.innerHTML=`<div class="tp-in"><div class="tp-main"><p class="eyebrow">Book by text</p><h2 id="tp-h">Text us from your phone.</h2><p class="tp-sub">Scan the code with your phone camera and Messages opens with your text ready. Or copy the number.</p><div class="tp-numrow"><span class="tp-num"></span><button type="button" class="btn btn-ghost" data-copy="num">Copy number</button></div><span class="mono tp-k">Your text</span><pre class="tp-msg"></pre><div class="tp-actions"><button type="button" class="btn btn-ghost" data-copy="msg">Copy text</button><a class="btn btn-ghost" data-direct href="#">Open Messages on this computer</a><a class="btn btn-ghost tp-ig" href="#" target="_blank" rel="noopener">DM on Instagram</a></div></div><figure class="tp-qr"><div class="tp-code"></div><figcaption class="mono">Scan to text</figcaption></figure></div><button type="button" class="tp-x" aria-label="Close">×</button>`;
+    d.body.appendChild(p);
+    p.querySelector('.tp-num').textContent=CONFIG.phoneDisplay; p.querySelector('.tp-ig').href=CONFIG.instagram;
+    p.querySelector('[data-copy=num]').addEventListener('click',e=>copy('+'+CONFIG.phone,e.currentTarget));
+    p.querySelector('[data-copy=msg]').addEventListener('click',e=>copy(p.querySelector('.tp-msg').textContent,e.currentTarget));
+    p.querySelector('.tp-x').addEventListener('click',()=>p.close());
+    p.addEventListener('click',e=>{ if(e.target===p) p.close(); });
+    return p; };
+  const openText=href=>{ panel=panel||buildPanel(); const body=bodyOf(href);
+    panel.querySelector('.tp-msg').textContent=body||'(write your dates + group size)';
+    panel.querySelector('[data-direct]').href=href;
+    const code=panel.querySelector('.tp-code'); code.innerHTML='';
+    loadQR().then(Q=>{ code.innerHTML=Q.svg(href,{ecl:'M',label:`QR code: text ${CONFIG.phoneDisplay} with your message`}); }).catch(()=>{ code.textContent=CONFIG.phoneDisplay; });
+    if(typeof panel.showModal==='function') panel.showModal(); else panel.setAttribute('open','');
+    const f=panel.querySelector('[data-copy=num]'); f&&f.focus(); };
+  window.JLR.openText=openText;
+  d.addEventListener('click',e=>{ if(!desk.matches||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey) return; const a=e.target.closest&&e.target.closest('a[href^="sms:"]'); if(!a||a.hasAttribute('data-direct')) return; e.preventDefault(); openText(a.href); });
+  if(desk.matches&&'requestIdleCallback' in window) requestIdleCallback(()=>loadQR().catch(()=>{}),{timeout:4000});
+  /* card → page morph: only the clicked card gets a view-transition-name (a static name on every card makes all of them fly).
+     Detail heroes carry vt-<page-file-name> in the HTML; here we give the matching card the same name for this one navigation. */
+  if(!RM&&'onpageswap' in window){
+    const key=url=>{ try{ const u=new URL(url,location.href); if(u.origin!==location.origin) return ''; const m=/\/(villas|cars)\/([^\/]+)\.html$/.exec(u.pathname); return m?'vt-'+m[2]:''; }catch(_){ return ''; } };
+    const mediaFor=name=>{ for(const a of d.querySelectorAll('a.card-media,a.scard')){ if(key(a.href)===name){ const m=a.querySelector('picture')||a.querySelector('img'); if(m) return m; } } return null; };
+    const onScreen=el=>{ const r=el.getBoundingClientRect(); return r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth; };
+    const tag=(el,name,vt)=>{ el.style.viewTransitionName=name; vt.finished.finally(()=>{ el.style.viewTransitionName=''; }); };
+    addEventListener('pageswap',e=>{ if(!e.viewTransition) return; const to=e.activation&&e.activation.entry&&e.activation.entry.url; const name=to?key(to):'';
+      const m=name&&mediaFor(name); if(m&&onScreen(m)) tag(m,name,e.viewTransition); });
+    addEventListener('pagereveal',e=>{ if(!e.viewTransition||!window.navigation||!navigation.activation) return; const from=navigation.activation.from&&navigation.activation.from.url; const name=from?key(from):'';
+      const m=name&&mediaFor(name); if(m&&onScreen(m)) tag(m,name,e.viewTransition); });
+  }
   /* lightbox: any .grid a[href$=.jpg] inside [data-lb] container, grouped per container */
   const lb=d.querySelector('.lb'); if(lb){ const im=lb.querySelector('img'), cnt=lb.querySelector('.c'); let set=[],i=0,last=null;
     const show=k=>{ i=(k+set.length)%set.length; im.src=set[i].href; im.alt=set[i].querySelector('img')?.alt||''; cnt.textContent=`${i+1} / ${set.length}`; lb.classList.add('on'); lb.querySelector('.x').focus(); };
