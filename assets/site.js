@@ -15,9 +15,9 @@
   const nav=d.querySelector('.nav'), tog=d.querySelector('.nav-toggle'), menu=d.querySelector('.menu');
   const onScroll=()=>{ if(nav && !nav.hasAttribute('data-solid')) nav.classList.toggle('solid', scrollY>24); };
   addEventListener('scroll',onScroll,{passive:true}); onScroll();
-  if(tog&&menu){ tog.addEventListener('click',()=>{const o=menu.classList.toggle('open');tog.setAttribute('aria-expanded',o);d.body.style.overflow=o?'hidden':''}); menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');tog.setAttribute('aria-expanded','false');d.body.style.overflow=''})); }
-  /* hero title words */
-  d.querySelectorAll('.hero-title[data-words]').forEach(h=>{ const nodes=[...h.childNodes]; h.innerHTML=''; nodes.forEach(n=>{ if(n.nodeType===3){ n.textContent.split(/(\s+)/).forEach(t=>{ if(!t)return; if(/^\s+$/.test(t)){h.appendChild(d.createTextNode(' '));return;} const w=d.createElement('span');w.className='word';const i=d.createElement('span');i.textContent=t;w.appendChild(i);h.appendChild(w); }); } else { const w=d.createElement('span');w.className='word';const i=d.createElement('span');i.appendChild(n);w.appendChild(i);h.appendChild(w);} }); });
+  if(tog&&menu){ const shut=()=>{menu.classList.remove('open');tog.setAttribute('aria-expanded','false');d.body.style.overflow=''}; tog.addEventListener('click',()=>{const o=menu.classList.toggle('open');tog.setAttribute('aria-expanded',o);d.body.style.overflow=o?'hidden':''}); menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut));
+    d.addEventListener('keydown',e=>{ if(e.key==='Escape'&&menu.classList.contains('open')){ shut(); tog.focus(); } }); }
+  /* hero title words are pre-split in the HTML and animated by CSS (no runtime rebuild: it delayed LCP and shifted layout) */
   /* reveal + counters + itinerary steps */
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting)return; e.target.classList.add('in'); io.unobserve(e.target);
     e.target.querySelectorAll('[data-count]').forEach(c=>{ const t=parseFloat(c.dataset.count), suf=c.dataset.suffix||''; if(RM){c.textContent=t+suf;return;} const s=performance.now(); const f=n=>{const p=Math.min(1,(n-s)/1400);c.textContent=Math.round(t*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)}; requestAnimationFrame(f); });

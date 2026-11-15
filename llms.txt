@@ -1,0 +1,42 @@
+# Juice Luxury Rentals
+
+> Text-to-book luxury concierge for group weekends: private villas, exotic cars, crewed yacht charters and chauffeured Sprinters in Miami, plus Potomac yacht charters in Washington, DC. A referral concierge: bookings are fulfilled by licensed operators.
+
+## How booking works
+- Text (301) 980-7994 (SMS) with your dates and group size, or DM Instagram (https://www.instagram.com/juiceluxuryrentals).
+- Curated options with photos within 24 hours; replies are personal, usually within hours.
+- Rates depend on dates, length of stay and season, so the site shows no prices; every quote is for the exact dates.
+- A 50% deposit locks the booking; the balance is due before arrival. Cars need a valid license, full-coverage insurance and a security deposit set by the operator.
+- Villas and exotic cars are Miami only. Yacht charters run in Miami and on the Potomac in DC. Tables, dinners and drivers in both cities.
+
+## Main pages
+- [Home](https://juiceluxuryrentals.com/): the whole weekend, one text; fleet, how a weekend runs, FAQ
+- [Exotic car rental in Miami](https://juiceluxuryrentals.com/cars.html)
+- [Yacht charters in Miami and DC](https://juiceluxuryrentals.com/yachts.html)
+- [Miami bachelor party weekend](https://juiceluxuryrentals.com/miami-bachelor-party.html)
+- [Miami birthday weekend](https://juiceluxuryrentals.com/miami-birthday-weekend.html)
+
+## Villas (Miami)
+- [Villa Nova](https://juiceluxuryrentals.com/villas/nova.html): Brickell, Miami; 7 bedrooms, sleeps 14
+- [Villa Eden](https://juiceluxuryrentals.com/villas/eden.html): Buena Vista · Design District; 6 bedrooms, sleeps 12
+- [Santorini](https://juiceluxuryrentals.com/villas/santorini.html): Pine Tree Drive · Miami Beach; 8 bedrooms, sleeps 26
+- [Athena](https://juiceluxuryrentals.com/villas/athena.html): Buena Vista · Design District; 6 bedrooms, sleeps 14
+- [Villa Babette](https://juiceluxuryrentals.com/villas/hibiscus.html): Hibiscus Island, Miami Beach; 4 bedrooms, sleeps 8
+- [Playa Castillo](https://juiceluxuryrentals.com/villas/playacastillo.html): Venetian Islands, Miami Beach; 6 bedrooms
+- [Ikon](https://juiceluxuryrentals.com/villas/ikon.html): The Roads · Brickell; 4 bedrooms, sleeps 10
+- [Villa Posh](https://juiceluxuryrentals.com/villas/posh.html): The Roads · Brickell; 4 bedrooms, sleeps 10
+- [Carriage](https://juiceluxuryrentals.com/villas/carriage.html): Little Haiti · Design District; 5 bedrooms, sleeps 12
+- [Little Haiti Villa](https://juiceluxuryrentals.com/villas/littlehaiti.html): Little Haiti · Buena Vista; 4 bedrooms, sleeps 12
+- [Bond](https://juiceluxuryrentals.com/villas/bond.html): Spring Garden · Miami River; 8 bedrooms, sleeps 20
+
+## Cars (Miami)
+- [Lamborghini Urus](https://juiceluxuryrentals.com/cars/lamborghini-urus-miami.html): Red on red · captain seats
+- [Lamborghini Urus S](https://juiceluxuryrentals.com/cars/lamborghini-urus-s-miami.html): Pearl orange · grey & orange interior
+- [Lamborghini Urus Mansory](https://juiceluxuryrentals.com/cars/lamborghini-urus-mansory-miami.html): Grey · carbon aero · orange interior
+
+## Boats
+- 55-ft Flybridge: Miami · up to 13 guests
+- 45-ft Larson: Miami · up to 13 guests · the value pick
+- Pershing & the big boats: Miami · 13 guests and up
+- 100-ft Motor Yacht: Miami Beach · large groups
+- DC · Potomac Charters: Washington DC · 13 to 20 guests
